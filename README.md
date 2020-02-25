@@ -8,7 +8,7 @@ togglvis
 Installation
 ------------
 
-You can install the released version of togglvis from [CRAN](https://CRAN.R-project.org) with:
+You can install the latest version of togglvis from [CRAN](https://CRAN.R-project.org) with:
 
 ``` r
 install.packages("remotes")
@@ -18,23 +18,19 @@ remotes::install_github("karissawhiting/togglvis")
 Example
 -------
 
-This is a basic example showing how to get data from the togglr API and process and visualize it.
+This is a basic example showing how to get data from the [{togglr}](https://github.com/ThinkR-open/togglr) API and process and visualize it.
+
+You will need to set up an account on [toggl](https://toggl.com/) and get an API token. See [{togglr}](https://github.com/ThinkR-open/togglr) for easy instructions on how to set API key.
+
+Note: You can also download data as a csv directly from the [toggl](https://toggl.com/).
 
 ``` r
 library(togglvis)
 library(dplyr)
-#> 
-#> Attaching package: 'dplyr'
-#> The following objects are masked from 'package:stats':
-#> 
-#>     filter, lag
-#> The following objects are masked from 'package:base':
-#> 
-#>     intersect, setdiff, setequal, union
-## basic example code
+library(togglr)
 ```
 
-Get summary report data using togglr app, or download data from web browser
+Get summary report data using [{togglr}](https://github.com/ThinkR-open/togglr) app, or download data from toggl web browser.
 
 ``` r
 # See togglr documentation for how to set up the API key
@@ -46,4 +42,4 @@ processed_report <- process_report(report)
 time_bar_chart(processed_report)
 ```
 
-<img src="man/figures/README-cars-1.png" width="100%" />
+<img src="man/figures/README-cars-1.png" width="80%" />

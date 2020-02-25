@@ -4,12 +4,14 @@ output: github_document
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-```{r, include = FALSE}
+```{r message=FALSE, warning=FALSE, include=FALSE}
 knitr::opts_chunk$set(
+  message = FALSE, 
+  warning = FALSE,
   collapse = TRUE,
   comment = "#>",
   fig.path = "man/figures/README-",
-  out.width = "100%"
+  out.width = "80%"
 )
 ```
 
@@ -21,7 +23,7 @@ knitr::opts_chunk$set(
 
 ## Installation
 
-You can install the released version of togglvis from [CRAN](https://CRAN.R-project.org) with:
+You can install the latest version  of togglvis from [CRAN](https://CRAN.R-project.org) with:
 
 ``` r
 install.packages("remotes")
@@ -30,26 +32,32 @@ remotes::install_github("karissawhiting/togglvis")
 
 ## Example
 
-This is a basic example showing how to get data from the togglr API and process
-and visualize it.
+This is a basic example showing how to get data from the 
+[{togglr}](https://github.com/ThinkR-open/togglr) API and process and visualize it.
+
+You will need to set up an account on [toggl](https://toggl.com/) and get an API token. 
+See [{togglr}](https://github.com/ThinkR-open/togglr) for easy instructions on how to set API key. 
+
+Note: You can also download data as a csv directly from the [toggl](https://toggl.com/). 
 
 ```{r example}
 library(togglvis)
 library(dplyr)
-## basic example code
+library(togglr)
 ```
 
 ```{r, echo=FALSE}
 load(here::here("data-raw", "report.RData"))
 ```
 
-Get summary report data using togglr app, or download data from web browser
+Get summary report data using [{togglr}](https://github.com/ThinkR-open/togglr) app, or download data from toggl web browser. 
 
 ```{r, eval = FALSE}
 # See togglr documentation for how to set up the API key
 report <- togglr::get_detailled_report()
 
 ```
+
 
 ```{r cars}
 processed_report <- process_report(report)
