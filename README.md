@@ -5,8 +5,6 @@ togglvis
 
 <!-- badges: start -->
 <!-- badges: end -->
-The goal of togglvis is to ...
-
 Installation
 ------------
 
@@ -24,9 +22,28 @@ This is a basic example showing how to get data from the togglr API and process 
 
 ``` r
 library(togglvis)
+library(dplyr)
+#> 
+#> Attaching package: 'dplyr'
+#> The following objects are masked from 'package:stats':
+#> 
+#>     filter, lag
+#> The following objects are masked from 'package:base':
+#> 
+#>     intersect, setdiff, setequal, union
 ## basic example code
 ```
 
+Get summary report data using togglr app, or download data from web browser
+
 ``` r
-#report <- get_detailled_report()
+# See togglr documentation for how to set up the API key
+report <- togglr::get_detailled_report()
 ```
+
+``` r
+processed_report <- process_report(report)
+time_bar_chart(processed_report)
+```
+
+<img src="man/figures/README-cars-1.png" width="100%" />

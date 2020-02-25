@@ -4,9 +4,7 @@
 #' @param report a dataframe of time tracking summary stats
 #' from togglr API or website.
 #' @examples
-#' add(1, 1)
-#' add(10, 1)
-#'
+#' @export
 #'
 process_report <- function(report,
                            task_description = "description",
@@ -21,13 +19,13 @@ process_report <- function(report,
            start_time,
            end_time,
            client, project) %>%
-    set_names(c("task_description",
+    rlang::set_names(c("task_description",
                 "start_time",
                 "end_time",
                 "project_lead",
                 "project")) %>%
-    mutate(start_time = parse_datetime(start_time),
-           end_time = parse_datetime(end_time)) %>%
+    mutate(start_time = readr::parse_datetime(start_time),
+           end_time = readr::parse_datetime(end_time)) %>%
     mutate(task_duration = difftime(as.POSIXct(end_time),
                                   as.POSIXct(start_time),
                                   units = "min")) %>%

@@ -21,9 +21,3 @@ from togglr API or website.}
 \description{
 Add together two numbers
 }
-\examples{
-add(1, 1)
-add(10, 1)
-
-
-}

@@ -8,4 +8,8 @@
 \description{
 Simple functions to clean and visualize data recorded using the toggl app.
 }
+\author{
+\strong{Maintainer}: Karissa Whiting \email{karissa.whiting@gmail.com}
+
+}
 \keyword{internal}
