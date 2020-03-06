@@ -8,7 +8,7 @@ togglvis
 Installation
 ------------
 
-You can install the latest version of togglvis from [CRAN](https://CRAN.R-project.org) with:
+You can install the latest version of togglvis from Github with:
 
 ``` r
 install.packages("remotes")
